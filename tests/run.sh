@@ -9,16 +9,5 @@ find -name '*.bats' -exec tests/batscheck.sh {} +
 
 rm -rf tests/integration/{.coverage,htmlcoverage}
 
-docker_version=$(docker version \
-    | grep '^Server:$' -A 100 \
-    | grep '^ API version:' \
-    | sed 's/^ API version:  *//')
-
-export DOCKER_API_VERSION="${docker_version}"
-
-if [ "${TRAVIS:-}" = "true" ]; then
-    env
-fi
-
 tests/integration/integration.bats
 tests/integration/report.sh
