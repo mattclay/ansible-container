@@ -1,0 +1,5 @@
+/.coverage
+/html-coverage
+/projects/init
+/projects/minimal/roles
+.coveragerc
