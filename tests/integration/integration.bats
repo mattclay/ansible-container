@@ -1,13 +1,6 @@
 #!/usr/bin/env bats
 
-mkdir -p "${BATS_TEST_DIRNAME}/.coverage"
-export COVERAGE_FILE="${BATS_TEST_DIRNAME}/.coverage/integration"
-PATH="${BATS_TEST_DIRNAME}/coverage:$PATH"
 cd "${BATS_TEST_DIRNAME}"
-
-# set defaults to keep shellcheck happy
-status=""
-output=""
 
 @test "invalid command fails" {
     run ansible-container invalid

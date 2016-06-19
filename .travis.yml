@@ -17,7 +17,7 @@ script:
   - pip install coverage
   - docker version
   - docker-compose version
-  - tests/run.sh
+  - tests/utils/run_tests.sh
 
 after_success:
   - bash <(curl -s https://codecov.io/bash) -X coveragepy
