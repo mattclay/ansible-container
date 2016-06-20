@@ -2,7 +2,7 @@ language: python
 
 build:
   ci:
-    - tests/utils/shippable.sh
+    - test/utils/shippable.sh
 
 integrations:
   notifications:
