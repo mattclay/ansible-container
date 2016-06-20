@@ -1,14 +1,1 @@
-coverage:
-  status:
-    project:
-      unit:
-        flag: unit
-      integration:
-        flag: integration
-    patch:
-      unit:
-        flag: unit
-      integration:
-        flag: integration
-
 comment: off
