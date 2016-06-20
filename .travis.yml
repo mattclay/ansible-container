@@ -12,7 +12,7 @@ before_install:
   - sudo apt-get install -y -o Dpkg::Options::="--force-confold" docker-engine
 
 install:
-  - pip install -r tests/requirements.txt
+  - pip install -r requirements.txt -r tests/requirements.txt
 
 script:
   - python setup.py develop
