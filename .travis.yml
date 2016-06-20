@@ -20,7 +20,8 @@ script:
   - tests/utils/run_tests.sh
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -X coveragepy
+  - bash <(curl -s https://codecov.io/bash) -X coveragepy -F unit        -s tests/reports/unit
+  - bash <(curl -s https://codecov.io/bash) -X coveragepy -F integration -s tests/reports/integration
 
 notifications:
   email: false
