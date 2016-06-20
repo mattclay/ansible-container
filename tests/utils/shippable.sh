@@ -13,7 +13,7 @@ docker-compose version
 function finish
 {
     # make sure shippable has testresults and codecoverage even on build failure
-    
+
     mkdir -p shippable/testresults
     mkdir -p shippable/codecoverage
 
