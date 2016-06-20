@@ -9,7 +9,9 @@ mkdir -p "${test_dir}/data"
 export COVERAGE_FILE="${test_dir}/data/coverage"
 
 cd "${source_root}"
-py.test --cov --junit-xml="${test_dir}/junit.xml" "${source_root}/tests/unit"
+
+PYTHONDONTWRITEBYTECODE=1 py.test \
+    --verbose --strict -r a --cov --junit-xml="${test_dir}/junit.xml" "${source_root}/tests/unit"
 
 coverage combine
 coverage html --dir "${test_dir}/html"
