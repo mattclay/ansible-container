@@ -10,6 +10,11 @@ python setup.py develop
 docker version
 docker-compose version
 
+# debug shippable build timeout
+cd test/integration/projects/minimal
+ansible-container --debug build
+exit
+
 function finish
 {
     # make sure shippable has testresults and codecoverage even on build failure
