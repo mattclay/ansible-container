@@ -1,4 +1,5 @@
 import os
+import pytest
 
 from scripttest import TestFileEnvironment as ScriptTestEnvironment  # rename to avoid pytest collect warning
 
@@ -8,6 +9,7 @@ def project_dir(name):
     return os.path.join(test_dir, 'projects', name)
 
 
+@pytest.mark.timeout(60)
 def test_build_minimal_docker_container():
     env = ScriptTestEnvironment()
     result = env.run('ansible-container', 'build', cwd=project_dir('minimal'), expect_stderr=True)
