@@ -14,7 +14,7 @@ before_install:
 
 script:
   - python setup.py develop
-  - pip install coverage
+  - pip install coverage pytest-cov
   - docker version
   - docker-compose version
   - tests/utils/run_tests.sh
