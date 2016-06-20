@@ -9,7 +9,7 @@ def project_dir(name):
     return os.path.join(test_dir, 'projects', name)
 
 
-@pytest.mark.timeout(120)
+@pytest.mark.timeout(240)
 def test_build_minimal_docker_container():
     env = ScriptTestEnvironment()
     result = env.run('ansible-container', 'build', cwd=project_dir('minimal'), expect_stderr=True)
